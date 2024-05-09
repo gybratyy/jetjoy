@@ -1,0 +1,37 @@
+/flight_booking_app
+  /android
+  /ios
+  /lib
+    /src
+      /models
+        - user.dart
+        - ticket.dart
+      /views
+        - login_page.dart
+        - register_page.dart
+        - main_page.dart
+        - booking_page.dart
+        - tickets_page.dart
+        - account_settings_page.dart
+      /widgets
+        - custom_text_field.dart
+        - passenger_selector.dart
+        - date_picker.dart
+        - destination_selector.dart
+      /blocs
+        - authentication_bloc.dart
+        - booking_bloc.dart
+        - ticket_bloc.dart
+      /services
+        - authentication_service.dart
+        - booking_service.dart
+        - ticket_service.dart
+    /utils
+      - validators.dart
+      - constants.dart
+    /database
+      - database_helper.dart
+  /assets
+    /images
+    /fonts
+  /test
