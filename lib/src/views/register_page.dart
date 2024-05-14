@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'login_page.dart';
-import 'main_page.dart';
-import '../blocs/authentication_bloc.dart'; // Adjust the path as needed
+import '../blocs/authentication_bloc.dart';
 
 class RegisterPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
