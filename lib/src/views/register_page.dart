@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'login_page.dart';
 import 'main_page.dart';
+import '../blocs/authentication_bloc.dart'; // Adjust the path as needed
 
 class RegisterPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
@@ -43,23 +45,28 @@ class RegisterPage extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MainPage()),
-                );
+                if (passwordController.text == confirmPasswordController.text) {
+                  BlocProvider.of<AuthenticationBloc>(context).register(
+                      emailController.text,
+                      passwordController.text
+                  );
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
+                } else {
+                  // Optionally show an error message if passwords do not match
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text("Passwords do not match")),
+                  );
+                }
               },
               child: const Text('Register'),
             ),
             TextButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
-                );
-              },
+              onPressed: () => Navigator.pop(context),
               child: const Text('Already have an account? Login'),
             ),
-
           ],
         ),
       ),
