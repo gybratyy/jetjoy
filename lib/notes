@@ -18,14 +18,6 @@
         - passenger_selector.dart
         - date_picker.dart
         - destination_selector.dart
-      /blocs
-        - authentication_bloc.dart
-        - booking_bloc.dart
-        - ticket_bloc.dart
-      /services
-        - authentication_service.dart
-        - booking_service.dart
-        - ticket_service.dart
     /utils
       - validators.dart
       - constants.dart
